@@ -110,7 +110,7 @@ def build_picotls():
         do_cmd('"{}" & msbuild /p:OPENSSL64DIR=c:\\OpenSSL-Win64 picotlsvs\\picotls\\picotls.vcxproj'.format(find_vs()))
     else:
         if platform.system() == 'Darwin':
-            do_cmd('PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig" cmake . -DOPENSSL_CRYPTO_LIBRARY=/usr/local/opt/openssl/lib/libcrypto.dylib -DOPENSSL_SSL_LIBRARY=/usr/local/opt/openssl/lib/libssl.dylib')
+            do_cmd('PKG_CONFIG_PATH="/opt/homebrew/Cellar/openssl@3/3.1.2/lib/pkgconfig" cmake . -DOPENSSL_CRYPTO_LIBRARY=/opt/homebrew/Cellar/openssl@3/3.1.2/lib/libcrypto.dylib -DOPENSSL_SSL_LIBRARY=/opt/homebrew/Cellar/openssl@3/3.1.2/lib/libssl.dylib')
         else:
             do_cmd('cmake .')
         do_cmd('make')
